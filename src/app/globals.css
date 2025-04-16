@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+    --background: #CAF0F8;
+    --foreground: #0077B6;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --brand: #00B4D8;
+    --primary: #ADE8F4;
+    --on-primary: #0077B6;
+    --secondary: #BCECF6;
+    --on-secondary: #48CAE4;
+    --tertiary: #48CAE4;
+    --on-tertiary: #CAF0F8;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #02033B;
+        --foreground: #0096C7;
+
+        --primary: #03045E;
+        --on-primary: #0096C7;
+        --secondary: #023E8A;
+        --on-secondary: #48CAE4;
+        --tertiary: #0077B6;
+        --on-tertiary: #90E0EF;
+    }
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-brand: var(--brand);
+    --color-primary: var(--primary);
+    --color-on-primary: var(--on-primary);
+    --color-secondary: var(--secondary);
+    --color-on-secondary: var(--on-secondary);
+    --color-tertiary: var(--tertiary);
+    --color-on-tertiary: var(--on-tertiary);
+
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-ubuntu);
+}
+
+.regular {
+    @apply bg-tertiary text-on-tertiary rounded-md
+}
+
+.attention {
+    @apply bg-red-100 active:bg-red-200 border-red-300 text-red-500 dark:bg-red-900 dark:active:bg-red-800 dark:border-red-700 rounded-md p-1
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,6 +1,15 @@
+import TopBar from "@/app/topBar"
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Geist, Geist_Mono, Ubuntu} from "next/font/google";
 import "./globals.css";
+
+const ubuntu = Ubuntu({
+    variable: "--font-ubuntu", weight: [
+        '300',
+        '400',
+        '500',
+        '700'], subsets: ['latin']
+});
 
 const geistSans = Geist({
     variable: "--font-geist-sans", subsets: ["latin"],
@@ -20,13 +29,15 @@ export default function RootLayout({
 {
     return (<html lang="en">
     <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-    <div className={'flex flex-col h-screen'}>
-        <div className={'w-full h-[10%] border-b-1 rounded-md'}></div>
-        <div className={'h-[80%]'}>
+        className={`${geistSans.variable} ${geistMono.variable} ${ubuntu.variable} antialiased`}>
+    <div className={'flex flex-col h-screen font-mono transition-all duration-500'}>
+        <div className={'w-full h-[10%] border-b-1 border-light-light dark:border-light-dark'}>
+            <TopBar/>
+        </div>
+        <div className={'h-[90%]'}>
             {children}
         </div>
-        <div className={'w-full h-[10%] border-t-1 rounded-xl'}></div>
+        {/*<div className={'w-full h-[10%] border-t-1 border-light-light dark:border-light-dark'}></div>*/}
     </div>
     </body>
     </html>);
