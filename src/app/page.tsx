@@ -2,14 +2,14 @@
 
 import {useState} from "react"
 
-export interface IListItem
+interface IListItem
 {
     name: string;
     isShown: boolean;
     toggleShown: () => void;
 }
 
-export function Items()
+function Items()
 {
     const [shownIndex, setShownIndex] = useState<number | null>(null);
 
@@ -40,7 +40,7 @@ export function Items()
         toggleShown={() => setShownIndex(shownIndex === i ? null : i)}/>));
 }
 
-export function Item(item: IListItem)
+function Item(item: IListItem)
 {
     const [isCompleted, setIsCompleted] = useState(false);
 
