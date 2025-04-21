@@ -2,28 +2,31 @@
 
 :root {
     --background: #CAF0F8;
-    --foreground: #0077B6;
+    --foreground: #59a4b3;
 
     --brand: #00B4D8;
     --primary: #ADE8F4;
-    --on-primary: #0077B6;
+    --on-primary: #59a4b3;
     --secondary: #BCECF6;
-    --on-secondary: #48CAE4;
-    --tertiary: #48CAE4;
-    --on-tertiary: #CAF0F8;
+    --on-secondary: #66bbcc;
+    --tertiary: #e3faff;
+    --on-tertiary: #59a3b3;
+    --danger: #ffe2e2;
+    --on-danger: #fb2c36;
 }
-
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #02033B;
+        --background: #020326;
         --foreground: #0096C7;
 
-        --primary: #03045E;
+        --primary: #05064d;
         --on-primary: #0096C7;
-        --secondary: #023E8A;
+        --secondary: #040540;
         --on-secondary: #48CAE4;
-        --tertiary: #0077B6;
+        --tertiary: #080a80;
         --on-tertiary: #90E0EF;
+        --danger: #82181a;
+        --on-danger: #fb2c36;
     }
 }
 
@@ -38,17 +41,11 @@
     --color-on-secondary: var(--on-secondary);
     --color-tertiary: var(--tertiary);
     --color-on-tertiary: var(--on-tertiary);
+    --color-danger: var(--danger);
+    --color-on-danger: var(--on-danger);
 
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-ubuntu);
-}
-
-.regular {
-    @apply bg-tertiary text-on-tertiary rounded-md
-}
-
-.attention {
-    @apply bg-red-100 active:bg-red-200 border-red-300 text-red-500 dark:bg-red-900 dark:active:bg-red-800 dark:border-red-700 rounded-md p-1
 }
 
 body {
